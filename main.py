@@ -3,17 +3,19 @@ from telebot import types
 import requests
 import simplejson as json
 
-TOKEN = '260214096:AAFYr32mjThh6uxW0J89MqW68_hZXzTlJ3w'
+TOKEN = '246195966:AAG0MAl4Bi5pMamAW0c6vdV2ZREEMovVehw'
 API_PATH = 'http://api.vajehyab.com/v2/public'
 
-bot = telebot.TeleBot('260214096:AAFYr32mjThh6uxW0J89MqW68_hZXzTlJ3w')
+bot = telebot.TeleBot('246195966:AAG0MAl4Bi5pMamAW0c6vdV2ZREEMovVehw')
 
 
 @bot.message_handler(commands=['start'])
 def start_command_handler(msg):
     start_msg = '''
-از مهر شما نسبت به خود سپاسگزارم.
-برای دریافت راهنما از دستور /help استفاده نمایید.
+سلام خوش امدید به ربات مترجم برای ددریافت دستورات دستورزیررا ارسال نمایید
+/help
+
+باتشکر 
 '''
     if msg.chat.type == 'private':
         bot.send_message(msg.chat.id, start_msg)
@@ -27,7 +29,7 @@ def help_command_handler(msg):
 استفاده از این ربات بسیار ساده است.
 کافی است کلمه مورد نظر خود را در پیام خصوصی برای ربات ارسال نمایید تا معنای آن را دریافت کنید.
 همچنین، برای استفاده اینلاین از ربات، کافی است پس از ارسال دستور /start در پیام شخصی ربات، برای گیرنده مورد نظر خود پیام زیر را نوشته و معنای آن را انتخاب نمایید تا ارسال شود.
-@IranBot کلمه
+@translatorrobot کلمه
 '''
     if msg.chat.type == 'private':
         bot.send_message(msg.chat.id, help_msg)
